@@ -11,6 +11,9 @@
 		9D462CCD2A227B26002EA875 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D462CCC2A227B26002EA875 /* ContentView.swift */; };
 		9D462CCF2A227B26002EA875 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D462CCE2A227B26002EA875 /* Assets.xcassets */; };
 		9D462CD22A227B26002EA875 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D462CD12A227B26002EA875 /* Preview Assets.xcassets */; };
+		9D462CDA2A228087002EA875 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D462CD92A228087002EA875 /* Color.swift */; };
+		9D462CE12A2286B5002EA875 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D462CE02A2286B5002EA875 /* HomeView.swift */; };
+		9D462CE52A228837002EA875 /* CircleButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D462CE42A228837002EA875 /* CircleButtonView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +22,9 @@
 		9D462CCC2A227B26002EA875 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		9D462CCE2A227B26002EA875 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9D462CD12A227B26002EA875 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		9D462CD92A228087002EA875 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		9D462CE02A2286B5002EA875 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		9D462CE42A228837002EA875 /* CircleButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleButtonView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +57,8 @@
 		9D462CC92A227B25002EA875 /* CoinGraphia */ = {
 			isa = PBXGroup;
 			children = (
+				9D462CD82A22806A002EA875 /* Extension */,
+				9D462CDC2A228652002EA875 /* Core */,
 				9D462CCA2A227B26002EA875 /* CoinGraphiaApp.swift */,
 				9D462CCC2A227B26002EA875 /* ContentView.swift */,
 				9D462CCE2A227B26002EA875 /* Assets.xcassets */,
@@ -65,6 +73,63 @@
 				9D462CD12A227B26002EA875 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		9D462CD82A22806A002EA875 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				9D462CD92A228087002EA875 /* Color.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		9D462CDC2A228652002EA875 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				9D462CE22A228808002EA875 /* Components */,
+				9D462CDD2A22865E002EA875 /* Home */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		9D462CDD2A22865E002EA875 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				9D462CDF2A228693002EA875 /* ViewModel */,
+				9D462CDE2A22868C002EA875 /* Views */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		9D462CDE2A22868C002EA875 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		9D462CDF2A228693002EA875 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				9D462CE02A2286B5002EA875 /* HomeView.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		9D462CE22A228808002EA875 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				9D462CE32A228813002EA875 /* CircleButton */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		9D462CE32A228813002EA875 /* CircleButton */ = {
+			isa = PBXGroup;
+			children = (
+				9D462CE42A228837002EA875 /* CircleButtonView.swift */,
+			);
+			path = CircleButton;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,7 +203,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				9D462CCD2A227B26002EA875 /* ContentView.swift in Sources */,
+				9D462CE12A2286B5002EA875 /* HomeView.swift in Sources */,
 				9D462CCB2A227B26002EA875 /* CoinGraphiaApp.swift in Sources */,
+				9D462CE52A228837002EA875 /* CircleButtonView.swift in Sources */,
+				9D462CDA2A228087002EA875 /* Color.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -270,11 +338,11 @@
 				DEVELOPMENT_TEAM = 9MDT732A28;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Coin Graphia";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -299,11 +367,11 @@
 				DEVELOPMENT_TEAM = 9MDT732A28;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Coin Graphia";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

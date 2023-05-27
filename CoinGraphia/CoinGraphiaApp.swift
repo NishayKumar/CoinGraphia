@@ -11,7 +11,10 @@ import SwiftUI
 struct CoinGraphiaApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            NavigationView(content: {
+                HomeView()
+                    .toolbar(.hidden)
+            })
         }
     }
 }
