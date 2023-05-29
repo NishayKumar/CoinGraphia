@@ -28,7 +28,7 @@ struct CoinRowView: View {
                 Spacer()
                 if showHoldingValue {
                     VStack(alignment: .trailing, content: {
-                        Text(coin.currentHoldingValue.asCurrencyWith6Decimals())
+                        Text(coin.currentHoldingValue.asCurrencyWith2Decimals())
                             .bold()
                         Text((coin.currentHoldings ?? 0).asNumberString())
                     })
@@ -45,12 +45,11 @@ struct CoinRowView: View {
                         )
                 })
                 
-                .padding()  // added padding might remove later
-//                .frame(height: geometry.size.height) //.. this works as well
-//                .frame(width: UIScreen.main.bounds.width / 3)
+                .padding()  // added padding, might remove later ;)
+                
+//                .frame(width: UIScreen.main.bounds.width / 3.5, alignment: .trailing)  // this looks good and works only on potrait mode.
             })
-            .frame(height: geometry.size.height)
-//            .frame(width: geometry.size.width)
+            .frame(width: geometry.size.width)
         }
     }
 }
