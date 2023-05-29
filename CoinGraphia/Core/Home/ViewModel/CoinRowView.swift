@@ -15,41 +15,22 @@ struct CoinRowView: View {
     var body: some View {
         GeometryReader{ geometry in
             HStack(spacing: 0, content: {
-                Text("\(coin.rank)")
-                    .font(.caption)
-                    .foregroundColor(.theme.secondaryText)
-                    .frame(minWidth: 30)
-                Circle()
-                    .frame(width: 30, height: 30)
-                Text(coin.symbol.uppercased())
-                    .font(.headline)
-                    .padding(.leading, 6)
-                    .foregroundColor(.theme.accent)
+                leftColumn
+                
                 Spacer()
+                
                 if showHoldingValue {
-                    VStack(alignment: .trailing, content: {
-                        Text(coin.currentHoldingValue.asCurrencyWith2Decimals())
-                            .bold()
-                        Text((coin.currentHoldings ?? 0).asNumberString())
-                    })
-                    .foregroundColor(.theme.accent)
+                    centerColumn
                 }
                 Spacer()
-                VStack(alignment: .trailing, content: {
-                    Text(coin.currentPrice.asCurrencyWith6Decimals())
-                        .foregroundColor(.theme.accent)
-                    Text(coin.priceChangePercentage24H?.asPercentString() ?? "")
-                        .foregroundColor(
-                            (coin.priceChangePercentage24H ?? 0) >= 0 ?
-                                .theme.green : .theme.red
-                        )
-                })
                 
-                .padding()  // added padding, might remove later ;)
-                
-//                .frame(width: UIScreen.main.bounds.width / 3.5, alignment: .trailing)  // this looks good and works only on potrait mode.
+                rightColumn
             })
+            .font(.subheadline)
+            .padding()  // added padding, might remove later ;)
+            
             .frame(width: geometry.size.width)
+            
         }
     }
 }
@@ -57,5 +38,45 @@ struct CoinRowView: View {
 struct CoinRowView_Previews: PreviewProvider {
     static var previews: some View {
         CoinRowView(coin: dev.coin, showHoldingValue: true)
+//            .previewLayout(.sizeThatFits)
+    }
+}
+
+
+extension CoinRowView {
+    private var leftColumn: some View {
+        HStack(spacing: 0){
+            Text("\(coin.rank)")
+                .font(.caption)
+                .foregroundColor(.theme.secondaryText)
+                .frame(minWidth: 30)
+            Circle()
+                .frame(width: 30, height: 30)
+            Text(coin.symbol.uppercased())
+                .font(.headline)
+                .padding(.leading, 6)
+                .foregroundColor(.theme.accent)
+        }
+    }
+    private var centerColumn: some View {
+        VStack(alignment: .trailing, content: {
+            Text(coin.currentHoldingValue.asCurrencyWith2Decimals())
+                .bold()
+            Text((coin.currentHoldings ?? 0).asNumberString())
+        })
+        .foregroundColor(.theme.accent)
+    }
+    
+    private var rightColumn: some View {
+        VStack(alignment: .trailing, content: {
+            Text(coin.currentPrice.asCurrencyWith6Decimals())
+                .foregroundColor(.theme.accent)
+            Text(coin.priceChangePercentage24H?.asPercentString() ?? "")
+                .foregroundColor(
+                    (coin.priceChangePercentage24H ?? 0) >= 0 ?
+                        .theme.green : .theme.red
+                )
+        })
+//        .frame(width: UIScreen.main.bounds.width / 3.5, alignment: .trailing)  // this looks good and works only on potrait mode.
     }
 }
