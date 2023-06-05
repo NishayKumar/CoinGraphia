@@ -13,7 +13,7 @@ struct CoinRowView: View {
     let showHoldingValue: Bool
     
     var body: some View {
-        GeometryReader{ geometry in
+//        GeometryReader{ geometry in
             HStack(spacing: 0, content: {
                 leftColumn
                 
@@ -22,26 +22,21 @@ struct CoinRowView: View {
                 if showHoldingValue {
                     centerColumn
                 }
-                Spacer()
                 
                 rightColumn
             })
             .font(.subheadline)
-            .padding()  // added padding, might remove later ;)
+//            .frame(width: geometry.size.width )
             
-            .frame(width: geometry.size.width)
-            
-        }
+//        }
     }
 }
 
 struct CoinRowView_Previews: PreviewProvider {
     static var previews: some View {
         CoinRowView(coin: dev.coin, showHoldingValue: true)
-//            .previewLayout(.sizeThatFits)
     }
 }
-
 
 extension CoinRowView {
     private var leftColumn: some View {
@@ -77,6 +72,6 @@ extension CoinRowView {
                         .theme.green : .theme.red
                 )
         })
-//        .frame(width: UIScreen.main.bounds.width / 3.5, alignment: .trailing)  // this looks good and works only on potrait mode.
+        .frame(width: UIScreen.main.bounds.width / 3.5, alignment: .trailing)  // this looks good and works only on potrait mode.
     }
 }

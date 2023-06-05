@@ -16,10 +16,12 @@ extension PreviewProvider {
     
 }
 
-class DeveloperPreview {
+class DeveloperPreview {  // dummy data for developing
     
     static let instance = DeveloperPreview()
     private init() { }
+    
+    let homeVM = HomeViewModel()
     
     let coin = CoinModel(
        id: "bitcoin",

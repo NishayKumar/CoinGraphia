@@ -9,12 +9,15 @@ import SwiftUI
 
 @main
 struct CoinGraphiaApp: App {
+    @StateObject private var vm = HomeViewModel()
+    
     var body: some Scene {
         WindowGroup {
             NavigationView(content: {
                 HomeView()
                     .toolbar(.hidden)
             })
+            .environmentObject(vm)
         }
     }
 }
