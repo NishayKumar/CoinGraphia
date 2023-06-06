@@ -33,7 +33,7 @@ class LocalFileManager {
     
     }
     
-    func getimage(imageName: String, folderName: String) -> UIImage {
+    func getimage(imageName: String, folderName: String) -> UIImage? {
         guard let url = getURLForImage(imageName: imageName, folderName: folderName),
               FileManager.default.fileExists(atPath: url.path()) else {
             return nil
