@@ -22,6 +22,7 @@ class HomeViewModel: ObservableObject {
     }
     func addSubscribers() {
         dataService.$allCoins
+            .receive(on: DispatchQueue.main)
             .sink { [weak self] (returnedCoins) in
                 self?.allCoins = returnedCoins
             }
