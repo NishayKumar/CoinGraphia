@@ -16,6 +16,8 @@ struct HomeView: View {
                 .ignoresSafeArea()
             VStack{
                 homeHeader
+                HomeStatsView(showPortfolio: $showPortfolio)
+                SearchBarView(searchText: $vm.searchText)
                 columnTitles
                 if !showPortfolio {
                     allCoinsList
@@ -24,10 +26,7 @@ struct HomeView: View {
                 if showPortfolio {
                     portfolioCoinList
                         .transition(.move(edge: .trailing))
-                    
                 }
-                
-                
                 Spacer(minLength: 0)
             }
         }
