@@ -22,6 +22,8 @@
 		9D67B6392A30F9E0007D485E /* StatisticModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D67B6382A30F9E0007D485E /* StatisticModel.swift */; };
 		9D67B63B2A30FC7D007D485E /* StatisitcView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D67B63A2A30FC7D007D485E /* StatisitcView.swift */; };
 		9D67B63D2A31167B007D485E /* HomeStatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D67B63C2A31167B007D485E /* HomeStatsView.swift */; };
+		9D67B63F2A311A21007D485E /* MarketDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D67B63E2A311A21007D485E /* MarketDataModel.swift */; };
+		9D67B6412A31249B007D485E /* MarketDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D67B6402A31249B007D485E /* MarketDataService.swift */; };
 		9D98B2422A2E633F00D9CD8C /* NetworkingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D98B2412A2E633F00D9CD8C /* NetworkingManager.swift */; };
 		9D98B2472A2E853300D9CD8C /* CoinImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D98B2462A2E853300D9CD8C /* CoinImageView.swift */; };
 		9D98B2492A2E876100D9CD8C /* CoinImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D98B2482A2E876000D9CD8C /* CoinImageService.swift */; };
@@ -49,6 +51,8 @@
 		9D67B6382A30F9E0007D485E /* StatisticModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticModel.swift; sourceTree = "<group>"; };
 		9D67B63A2A30FC7D007D485E /* StatisitcView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisitcView.swift; sourceTree = "<group>"; };
 		9D67B63C2A31167B007D485E /* HomeStatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeStatsView.swift; sourceTree = "<group>"; };
+		9D67B63E2A311A21007D485E /* MarketDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketDataModel.swift; sourceTree = "<group>"; };
+		9D67B6402A31249B007D485E /* MarketDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketDataService.swift; sourceTree = "<group>"; };
 		9D98B2412A2E633F00D9CD8C /* NetworkingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingManager.swift; sourceTree = "<group>"; };
 		9D98B2462A2E853300D9CD8C /* CoinImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinImageView.swift; sourceTree = "<group>"; };
 		9D98B2482A2E876000D9CD8C /* CoinImageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinImageService.swift; sourceTree = "<group>"; };
@@ -181,6 +185,7 @@
 			children = (
 				9D462CE92A23DC0A002EA875 /* CoinModel.swift */,
 				9D67B6382A30F9E0007D485E /* StatisticModel.swift */,
+				9D67B63E2A311A21007D485E /* MarketDataModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -208,6 +213,7 @@
 			children = (
 				9DB6B1932A2A5675008A75F9 /* CoinDataService.swift */,
 				9D98B2482A2E876000D9CD8C /* CoinImageService.swift */,
+				9D67B6402A31249B007D485E /* MarketDataService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -283,6 +289,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9D67B6392A30F9E0007D485E /* StatisticModel.swift in Sources */,
+				9D67B6412A31249B007D485E /* MarketDataService.swift in Sources */,
 				9DB6B1942A2A5675008A75F9 /* CoinDataService.swift in Sources */,
 				9D462CEC2A23ECEE002EA875 /* CoinRowView.swift in Sources */,
 				9DB6B1912A2A0C19008A75F9 /* HomeViewModel.swift in Sources */,
@@ -295,6 +302,7 @@
 				9D462CE52A228837002EA875 /* CircleButtonView.swift in Sources */,
 				9D67B63D2A31167B007D485E /* HomeStatsView.swift in Sources */,
 				9D462CE72A22929D002EA875 /* CiricleButtonAnimationView.swift in Sources */,
+				9D67B63F2A311A21007D485E /* MarketDataModel.swift in Sources */,
 				9DD16DCA2A2FE92C009D52B4 /* SearchBarView.swift in Sources */,
 				9D98B2422A2E633F00D9CD8C /* NetworkingManager.swift in Sources */,
 				9D462CDA2A228087002EA875 /* Color.swift in Sources */,
