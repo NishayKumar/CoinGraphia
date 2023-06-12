@@ -93,13 +93,14 @@ extension HomeView {
     
     private var portfolioCoinList: some View {
         List(content: {
-            ForEach(vm.allCoins) { coin in
+            ForEach(vm.portfolioCoins) { coin in
                 CoinRowView(coin: coin, showHoldingValue: true)
                     .listRowInsets(.init(top: 10, leading: 0, bottom: 0, trailing: 10))
             }
         })
         .listStyle(.plain)
     }
+    
     
     private var columnTitles: some View {
         HStack {

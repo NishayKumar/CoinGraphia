@@ -1,3 +1,4 @@
+
 //
 //  PortfolioView.swift
 //  CoinGraphia
@@ -12,7 +13,7 @@ struct PortfolioView: View {
     @State private var selectedCoins: CoinModel? = nil
     @State private var quantityText: String = ""
     @State private var showCheckMark: Bool = false
-    @FocusState private var nameIsFocused: Bool
+    
     
     var body: some View {
         NavigationView {
@@ -35,7 +36,11 @@ struct PortfolioView: View {
                     trailingNavBarButtons
                 }
             })
-            
+            .onChange(of: vm.searchText) { value in
+                if value == "" {
+                    removeSelectedCoins()
+                }
+            }
         }
     }
 }
@@ -53,13 +58,13 @@ extension PortfolioView {
     private var coinLogoList: some View {
         ScrollView(.horizontal, showsIndicators: false) {
             LazyHStack(spacing: 10) {
-                ForEach(vm.allCoins) { coin in
+                ForEach(vm.searchText.isEmpty ? vm.portfolioCoins : vm.allCoins) { coin in
                     CoinLogoView(coin: coin)
                         .frame(width: 75)
                         .padding(4)
                         .onTapGesture {
                             withAnimation(.easeIn) {
-                                selectedCoins = coin
+                                updateSelectedCoin(coin: coin)
                             }
                         }
                         .background(
@@ -70,6 +75,16 @@ extension PortfolioView {
             }
             .frame(height: 120)
             .padding(.leading)
+        }
+    }
+    private func updateSelectedCoin(coin: CoinModel) {
+        selectedCoins = coin
+        
+        if let portfolioCoin = vm.portfolioCoins.first(where: {$0.id == coin.id}),
+           let amount = portfolioCoin.currentHoldings {
+            quantityText = "\(amount)"
+        } else {
+            quantityText = ""
         }
     }
     
@@ -93,10 +108,10 @@ extension PortfolioView {
                 
                 Spacer()
                 TextField("Ex: 1.4", text: $quantityText)
-                    .focused($nameIsFocused)
+                
                     .multilineTextAlignment(.trailing)
                     .keyboardType(.decimalPad)
-                    
+                
             }
             Divider()
             HStack{
@@ -105,7 +120,7 @@ extension PortfolioView {
                 Text(getCurrentValue().asCurrencyWith2Decimals())
             }
         }
-        .animation(.none)
+        .animation(.none, value: selectedCoins?.symbol)
         .padding()
         .font(.headline)
     }
@@ -126,10 +141,10 @@ extension PortfolioView {
     }
     
     private func saveButtonPressed() {
-        guard let coin = selectedCoins else { return }
+        guard let coin = selectedCoins, let amount = Double(quantityText) else { return }
         
         //save to portfolio
-        
+        vm.updatePortfolio(coin: coin, amount: amount)
         
         //show checkmark
         withAnimation(.easeIn) {
@@ -138,7 +153,7 @@ extension PortfolioView {
         }
         
         // hide keyboard
-        nameIsFocused = false
+        UIApplication.shared.endEditing()
         
         // hide checkmark
         DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
