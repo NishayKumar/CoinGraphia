@@ -26,18 +26,15 @@ class PortfolioService {
     }
     // MARK: PUBLIC
     func updatePortfolio(coin: CoinModel, amount: Double) {
-        
-        //check if coin is already in portfolio
-        if let entity = saveEntities.first(where: { saveEntity -> Bool in
-            return saveEntity.coinID == coin.id
-        }) {
+        //check if the coin is in portfolio
+        if let entity = saveEntities.first(where: {$0.coinID == coin.id}) {
             if amount > 0 {
                 update(entity: entity, amount: amount)
             } else {
                 delete(entity: entity)
             }
-        }else {
-            add(coin: coin, amount: amount)
+        } else {
+          add(coin: coin, amount: amount)
         }
     }
     
