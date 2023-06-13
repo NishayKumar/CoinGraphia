@@ -80,7 +80,7 @@ extension PortfolioView {
     private func updateSelectedCoin(coin: CoinModel) {
         selectedCoins = coin
         
-        if let portfolioCoin = vm.portfolioCoins.first(where: {$0.id == coin.id}),
+        if let portfolioCoin = vm.portfolioCoins.first(where: { $0.id == coin.id}),
            let amount = portfolioCoin.currentHoldings {
             quantityText = "\(amount)"
         } else {
