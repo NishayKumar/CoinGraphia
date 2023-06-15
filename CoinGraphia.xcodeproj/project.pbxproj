@@ -39,6 +39,7 @@
 		9DD16DCA2A2FE92C009D52B4 /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD16DC92A2FE92C009D52B4 /* SearchBarView.swift */; };
 		9DEAF6AB2A33B80900251F8E /* PortfolioContainer.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9DEAF6A92A33B80900251F8E /* PortfolioContainer.xcdatamodeld */; };
 		9DEAF6AD2A33B89600251F8E /* PortfolioDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DEAF6AC2A33B89600251F8E /* PortfolioDataService.swift */; };
+		9DFD06802A39010E008D5A65 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DFD067F2A39010E008D5A65 /* DetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -75,6 +76,7 @@
 		9DD16DC92A2FE92C009D52B4 /* SearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
 		9DEAF6AA2A33B80900251F8E /* PortfolioContainer.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PortfolioContainer.xcdatamodel; sourceTree = "<group>"; };
 		9DEAF6AC2A33B89600251F8E /* PortfolioDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioDataService.swift; sourceTree = "<group>"; };
+		9DFD067F2A39010E008D5A65 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +146,7 @@
 			children = (
 				9D462CE22A228808002EA875 /* Components */,
 				9D462CDD2A22865E002EA875 /* Home */,
+				9DFD067A2A39007E008D5A65 /* Detail */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -239,6 +242,30 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
+		9DFD067A2A39007E008D5A65 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				9DFD067B2A3900CE008D5A65 /* ViewModels */,
+				9DFD067C2A3900D9008D5A65 /* Views */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
+		9DFD067B2A3900CE008D5A65 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		9DFD067C2A3900D9008D5A65 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				9DFD067F2A39010E008D5A65 /* DetailView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -325,6 +352,7 @@
 				9D67B63B2A30FC7D007D485E /* StatisitcView.swift in Sources */,
 				9D462CE52A228837002EA875 /* CircleButtonView.swift in Sources */,
 				9D67B63D2A31167B007D485E /* HomeStatsView.swift in Sources */,
+				9DFD06802A39010E008D5A65 /* DetailView.swift in Sources */,
 				9DA6D2402A38BE8E009D1C5B /* HapticManager.swift in Sources */,
 				9D462CE72A22929D002EA875 /* CiricleButtonAnimationView.swift in Sources */,
 				9D67B63F2A311A21007D485E /* MarketDataModel.swift in Sources */,

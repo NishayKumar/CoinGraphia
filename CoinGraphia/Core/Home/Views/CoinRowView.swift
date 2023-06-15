@@ -27,6 +27,11 @@ struct CoinRowView: View {
             })
             .font(.subheadline)
 //            .frame(width: geometry.size.width )
+            .background(
+                Color.theme.green
+//                Color.theme.background.opacity(0.001)
+//                .clear
+            )
             
 //        }
     }
