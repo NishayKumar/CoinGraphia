@@ -9,9 +9,7 @@ import Foundation
 import Combine
 
 class CoinDetailDataService {
-    
     @Published var coinDetails: CoinDetailModel? = nil
-    
     var coinDetailSubscription: AnyCancellable?
     let coin: CoinModel
     
@@ -25,7 +23,7 @@ class CoinDetailDataService {
         else { return }
         
         coinDetailSubscription =  NetworkingManager.download(url: url)
-            .decode(type: [CoinDetailModel].self, decoder: JSONDecoder())
+            .decode(type: CoinDetailModel.self, decoder: JSONDecoder())
             .sink(receiveCompletion: NetworkingManager.handleCompletion, receiveValue: { [weak self] returnedCoinDetails in
                 self?.coinDetails = returnedCoinDetails
                 self?.coinDetailSubscription?.cancel()
