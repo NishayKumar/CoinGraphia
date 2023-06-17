@@ -10,7 +10,7 @@ import Combine
 
 class HomeViewModel: ObservableObject {
     
-    @Published var statistic: [statisticModel] = []
+    @Published var statistic: [StatisticModel] = []
     
     
     @Published var allCoins: [CoinModel] = []
@@ -133,15 +133,15 @@ class HomeViewModel: ObservableObject {
             }
     }
     
-    private func mapGlobalMarketData(MarketDataModel: MarketDataModel?, portfolioCoins: [CoinModel]) -> [statisticModel] {
-        var stats: [statisticModel] = []
+    private func mapGlobalMarketData(MarketDataModel: MarketDataModel?, portfolioCoins: [CoinModel]) -> [StatisticModel] {
+        var stats: [StatisticModel] = []
         
         guard let data = MarketDataModel else {
             return stats
         }
-        let marketCap = statisticModel(title: "MarketCap", value: data.marketCap, percentageChange: data.marketCapChangePercentage24HUsd)
-        let volume = statisticModel(title: "24h Volume", value: data.volume)
-        let btcDominance = statisticModel(title: "BTC Dominance", value: data.btcDominance)
+        let marketCap = StatisticModel(title: "MarketCap", value: data.marketCap, percentageChange: data.marketCapChangePercentage24HUsd)
+        let volume = StatisticModel(title: "24h Volume", value: data.volume)
+        let btcDominance = StatisticModel(title: "BTC Dominance", value: data.btcDominance)
 
 //        let portfolioValue = portfolioCoins.map { coin -> Double in
 //            return coin.currentHoldingValue
@@ -159,7 +159,7 @@ class HomeViewModel: ObservableObject {
         
         let percentageChange = ((portfolioValue - previousValue) / previousValue) * 100
         
-        let portfolio = statisticModel(title: "Portfolio Value", value: portfolioValue.asCurrencyWith2Decimals(), percentageChange: percentageChange)
+        let portfolio = StatisticModel(title: "Portfolio Value", value: portfolioValue.asCurrencyWith2Decimals(), percentageChange: percentageChange)
         stats.append(contentsOf: [
             marketCap,
             volume,
