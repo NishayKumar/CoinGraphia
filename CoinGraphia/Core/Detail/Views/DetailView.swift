@@ -48,8 +48,11 @@ struct DetailView: View {
                 additionalGrid
             }
             .padding()
+            
         }
         .navigationTitle(vm.coin.name)
+        .navigationBarTitleDisplayMode(.large)
+        
     }
     
 }
