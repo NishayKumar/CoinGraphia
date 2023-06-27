@@ -39,6 +39,7 @@ class DetailViewModel: ObservableObject {
             .store(in: &cancellables)
         
         coinDetailService.$coinDetails
+            .receive(on: DispatchQueue.main)
             .sink { [weak self] returnedCoinDetail in
                 self?.coinDescription = returnedCoinDetail?.readableDescription
                 self?.websiteURL = returnedCoinDetail?.links?.homepage?.first
