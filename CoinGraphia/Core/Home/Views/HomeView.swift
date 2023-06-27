@@ -95,7 +95,7 @@ extension HomeView {
             ForEach(vm.allCoins) { coin in
                 CoinRowView(coin: coin, showHoldingValue: false)
                     .listRowInsets(.init(top: 10, leading: 0, bottom: 0, trailing: 10))
-                    .contentShape(Rectangle()) // to make the coins tapable
+                    .contentShape(Rectangle()) // to make the coins tappable
                     .onTapGesture {
                         segue(coin: coin)
                     }
@@ -109,6 +109,7 @@ extension HomeView {
             ForEach(vm.portfolioCoins) { coin in
                 CoinRowView(coin: coin, showHoldingValue: true)
                     .listRowInsets(.init(top: 10, leading: 0, bottom: 0, trailing: 10))
+                    .contentShape(Rectangle()) // to make the coins tappable
                     .onTapGesture {
                         segue(coin: coin)
                     }
