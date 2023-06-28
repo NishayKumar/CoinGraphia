@@ -21,6 +21,8 @@
 		9D462CEC2A23ECEE002EA875 /* CoinRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D462CEB2A23ECEE002EA875 /* CoinRowView.swift */; };
 		9D462CEE2A23EECB002EA875 /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D462CED2A23EECB002EA875 /* Double.swift */; };
 		9D462CF02A24AD50002EA875 /* PreviewProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D462CEF2A24AD50002EA875 /* PreviewProvider.swift */; };
+		9D66B91C2A4B91FF00C8E8B0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D66B91B2A4B91FF00C8E8B0 /* LaunchScreen.storyboard */; };
+		9D66B91E2A4B947B00C8E8B0 /* LaunchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D66B91D2A4B947B00C8E8B0 /* LaunchView.swift */; };
 		9D67B6392A30F9E0007D485E /* StatisticModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D67B6382A30F9E0007D485E /* StatisticModel.swift */; };
 		9D67B63B2A30FC7D007D485E /* StatisitcView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D67B63A2A30FC7D007D485E /* StatisitcView.swift */; };
 		9D67B63D2A31167B007D485E /* HomeStatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D67B63C2A31167B007D485E /* HomeStatsView.swift */; };
@@ -66,6 +68,8 @@
 		9D462CEB2A23ECEE002EA875 /* CoinRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinRowView.swift; sourceTree = "<group>"; };
 		9D462CED2A23EECB002EA875 /* Double.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
 		9D462CEF2A24AD50002EA875 /* PreviewProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewProvider.swift; sourceTree = "<group>"; };
+		9D66B91B2A4B91FF00C8E8B0 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		9D66B91D2A4B947B00C8E8B0 /* LaunchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchView.swift; sourceTree = "<group>"; };
 		9D67B6382A30F9E0007D485E /* StatisticModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticModel.swift; sourceTree = "<group>"; };
 		9D67B63A2A30FC7D007D485E /* StatisitcView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisitcView.swift; sourceTree = "<group>"; };
 		9D67B63C2A31167B007D485E /* HomeStatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeStatsView.swift; sourceTree = "<group>"; };
@@ -148,6 +152,7 @@
 				9DB6B1922A2A564A008A75F9 /* Services */,
 				9D462CE82A23DBDF002EA875 /* Models */,
 				9D462CDC2A228652002EA875 /* Core */,
+				9D3D23F82A4A9F3A0099CF0F /* Settings */,
 				9D462CCC2A227B26002EA875 /* ContentView.swift */,
 				9D462CCE2A227B26002EA875 /* Assets.xcassets */,
 				9D462CD02A227B26002EA875 /* Preview Content */,
@@ -179,8 +184,8 @@
 		9D462CDC2A228652002EA875 /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				9D3D23F82A4A9F3A0099CF0F /* Settings */,
 				9D462CE22A228808002EA875 /* Components */,
+				9D66B9192A4B918700C8E8B0 /* Launch */,
 				9D462CDD2A22865E002EA875 /* Home */,
 				9DFD067A2A39007E008D5A65 /* Detail */,
 			);
@@ -246,6 +251,23 @@
 				9DEAF6A92A33B80900251F8E /* PortfolioContainer.xcdatamodeld */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		9D66B9192A4B918700C8E8B0 /* Launch */ = {
+			isa = PBXGroup;
+			children = (
+				9D66B91A2A4B91EB00C8E8B0 /* Views */,
+			);
+			path = Launch;
+			sourceTree = "<group>";
+		};
+		9D66B91A2A4B91EB00C8E8B0 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				9D66B91B2A4B91FF00C8E8B0 /* LaunchScreen.storyboard */,
+				9D66B91D2A4B947B00C8E8B0 /* LaunchView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		9D98B2402A2E631900D9CD8C /* Utilities */ = {
@@ -364,6 +386,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9D66B91C2A4B91FF00C8E8B0 /* LaunchScreen.storyboard in Resources */,
 				9D462CD22A227B26002EA875 /* Preview Assets.xcassets in Resources */,
 				9D462CCF2A227B26002EA875 /* Assets.xcassets in Resources */,
 			);
@@ -377,6 +400,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9D67B6392A30F9E0007D485E /* StatisticModel.swift in Sources */,
+				9D66B91E2A4B947B00C8E8B0 /* LaunchView.swift in Sources */,
 				9D67B6412A31249B007D485E /* MarketDataService.swift in Sources */,
 				9D67B6472A322BE6007D485E /* CoinLogoView.swift in Sources */,
 				9D90A7E12A48814800FE58CB /* ChartView.swift in Sources */,
@@ -550,6 +574,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -579,6 +604,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

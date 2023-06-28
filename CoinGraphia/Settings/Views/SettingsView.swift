@@ -44,10 +44,10 @@ extension SettingsView {
     private var header: some View {
         Section {
             VStack(alignment: .leading) {
-                Image(systemName: "bitcoinsign.circle.fill")
+                Image("logo")
                     .resizable()
                     .frame(width: 100, height: 100)
-//                    .clipShape(RoundedRectangle(cornerRadius: 20))
+                    .clipShape(RoundedRectangle(cornerRadius: 20))
                 Text("The crypto app provides real-time cryptocurrency information and portfolio management, making it easy to track prices and manage investments in the cryptocurrency market.")
                     .font(.callout)
                     .fontWeight(.medium)
@@ -70,7 +70,7 @@ extension SettingsView {
     private var coingecko: some View {
         Section {
             VStack(alignment: .leading) {
-                Image(systemName: "lizard")
+                Image("coingecko")
                     .resizable()
                     .scaledToFit()
                     .frame(height: 100)
