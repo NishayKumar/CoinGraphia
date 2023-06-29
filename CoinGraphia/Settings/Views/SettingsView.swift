@@ -48,6 +48,7 @@ extension SettingsView {
                     .resizable()
                     .frame(width: 100, height: 100)
                     .clipShape(RoundedRectangle(cornerRadius: 20))
+                    .cornerRadius(20)
                 Text("The crypto app provides real-time cryptocurrency information and portfolio management, making it easy to track prices and manage investments in the cryptocurrency market.")
                     .font(.callout)
                     .fontWeight(.medium)

@@ -23,7 +23,6 @@ struct LaunchView: View {
             Image("logo")
                 .resizable()
                 .frame(width: 100, height: 100)
-                .cornerRadius(20)
                 .foregroundColor(.pink)
             ZStack {
                 if showLoadingText {
