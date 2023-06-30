@@ -27,6 +27,7 @@ struct CoinGraphiaApp: App {
                     HomeView()
                         .toolbar(.hidden)
                 })
+                .navigationViewStyle(StackNavigationViewStyle()) // make the ipad similar to iphone so that the first view of navigatoinView doesn't open in the side view on the ipad
                 .environmentObject(vm)
                 
                 ZStack {

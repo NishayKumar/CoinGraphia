@@ -9,7 +9,7 @@ import SwiftUI
 
 struct SettingsView: View {
     
-    let defaultURL = URL(string: "https://www.apple.com/in/")!
+    let temporaryURL = URL(string: "https://www.apple.com/in/")!
     let twitterURL = URL(string: "https://www.twitter.com/LiGHT_XO1")!
     let githubURL = URL(string: "https://www.github.com/NishayKumar")!
     let coingeckoURL = URL(string: "https://www.coingecko.com")!
@@ -17,19 +17,28 @@ struct SettingsView: View {
     
     var body: some View {
         NavigationView{
-            List {
-                header
-                coingecko
-                developerSection
-                applicationSection
+            ZStack{
+                Color.theme.background
+                    .ignoresSafeArea()
+                
+                List {
+                    header
+                        .listRowBackground(Color.theme.background.opacity(0.5))
+                    coingecko
+                        .listRowBackground(Color.theme.background.opacity(0.5))
+                    developerSection
+                        .listRowBackground(Color.theme.background.opacity(0.5))
+                    applicationSection
+                        .listRowBackground(Color.theme.background.opacity(0.5))
+                }
             }
             .navigationTitle("Settings")
             .navigationBarTitleDisplayMode(.large)
-            .toolbar {
-                ToolbarItem(placement: .navigationBarLeading) {
-                    XMarkButton()
-                }
-            }
+//            .toolbar {
+//                ToolbarItem(placement: .navigationBarLeading) {
+//                    XMarkButton()
+//                }
+//            }
         }
     }
 }
@@ -56,10 +65,10 @@ extension SettingsView {
                 
             }
             .padding(.vertical)
-            Group {
-                Link("Twitter", destination: twitterURL)
-                Link("GitHub", destination: githubURL )
-            }
+//            Group {
+//                Link("Twitter", destination: twitterURL)
+//                Link("GitHub", destination: githubURL )
+//            }
             .font(.headline)
             .accentColor(.blue)
         }
@@ -121,9 +130,10 @@ extension SettingsView {
     private var applicationSection: some View {
         Section {
             Group {
-                Link("Terms of Services", destination: twitterURL)
-                Link("Privacy Policy", destination: githubURL )
-                Link("Learn More", destination: githubURL )
+                Link("Terms of Services", destination: temporaryURL)
+                Link("Privacy Policy", destination: temporaryURL)
+                Link("Compnay Website", destination: temporaryURL)
+                Link("Learn More", destination: temporaryURL)
             }
             .font(.headline)
             .accentColor(.blue)

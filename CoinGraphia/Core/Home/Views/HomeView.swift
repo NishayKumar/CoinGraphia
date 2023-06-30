@@ -35,8 +35,14 @@ struct HomeView: View {
                         .transition(.move(edge: .leading))
                 }
                 if showPortfolio {
-                    portfolioCoinList
-                        .transition(.move(edge: .trailing))
+                    ZStack(alignment: .top) {
+                        if vm.portfolioCoins.isEmpty && vm.searchText.isEmpty {
+                            portfolioEmptyText
+                        }else {
+                            portfolioCoinList
+                        }
+                    }
+                    .transition(.move(edge: .trailing))
                 }
                 Spacer(minLength: 0)
             }
@@ -104,11 +110,11 @@ extension HomeView {
                     .onTapGesture {
                         segue(coin: coin)
                     }
+                    .listRowBackground(Color.theme.background)
             }
         })
         .listStyle(.plain)
     }
-    
     private var portfolioCoinList: some View {
         List(content: {
             ForEach(vm.portfolioCoins) { coin in
@@ -118,16 +124,25 @@ extension HomeView {
                     .onTapGesture {
                         segue(coin: coin)
                     }
+                    .listRowBackground(Color.theme.background)
             }
         })
         .listStyle(.plain)
+    }
+    
+    private var portfolioEmptyText: some View {
+        Text("Click the + button to add coins")
+            .font(.callout)
+            .foregroundColor(.theme.accent)
+            .fontWeight(.medium)
+            .multilineTextAlignment(.center)
+            .padding(50)
     }
     
     private func segue(coin: CoinModel) {
         selectedCoin = coin
         showDetailView.toggle()
     }
-    
     private var columnTitles: some View {
         HStack {
             HStack(spacing: 4){
@@ -141,8 +156,7 @@ extension HomeView {
                     vm.sortOption = vm.sortOption == .rank ? .rankReversed : .rank
                 }
             }
-            
-            
+
             Spacer()
             if showPortfolio {
                 HStack(spacing: 4){

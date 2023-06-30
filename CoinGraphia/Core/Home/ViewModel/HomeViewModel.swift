@@ -21,7 +21,7 @@ class HomeViewModel: ObservableObject {
     
     private let coinDataService = CoinDataService()
     private let marketDataService = MarketDataService()
-    private let portfolioDataService = PortfolioService()
+    private let portfolioDataService = PortfolioDataService()
     private var cancellables = Set<AnyCancellable>()
     
     enum SortOption {
@@ -45,7 +45,7 @@ class HomeViewModel: ObservableObject {
             .store(in: &cancellables)
         //updates portfolioCoins
         $allCoins
-            .combineLatest(portfolioDataService.$saveEntities)
+            .combineLatest(portfolioDataService.$savedEntities)
             .map(mapAllCoinsToPortfolioCoins)
             .sink { [weak self] returnedCoins in
                 guard let self = self else {return}
@@ -157,7 +157,7 @@ class HomeViewModel: ObservableObject {
         }
             .reduce(0, +)
         
-        let percentageChange = ((portfolioValue - previousValue) / previousValue) * 100
+        let percentageChange = ((portfolioValue - previousValue) / previousValue)
         
         let portfolio = StatisticModel(title: "Portfolio Value", value: portfolioValue.asCurrencyWith2Decimals(), percentageChange: percentageChange)
         stats.append(contentsOf: [
