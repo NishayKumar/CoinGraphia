@@ -25,26 +25,29 @@ struct HomeView: View {
                         .environmentObject(vm)
                 }
                 
-            VStack{
-                homeHeader
-                HomeStatsView(showPortfolio: $showPortfolio)
-                SearchBarView(searchText: $vm.searchText)
-                columnTitles
-                if !showPortfolio {
-                    allCoinsList
-                        .transition(.move(edge: .leading))
-                }
-                if showPortfolio {
-                    ZStack(alignment: .top) {
-                        if vm.portfolioCoins.isEmpty && vm.searchText.isEmpty {
-                            portfolioEmptyText
-                        }else {
-                            portfolioCoinList
-                        }
+            NavigationStack{
+                VStack{
+                    homeHeader
+                    HomeStatsView(showPortfolio: $showPortfolio)
+//                    SearchBarView(searchText: $vm.searchText)
+                    columnTitles
+                    if !showPortfolio {
+                        allCoinsList
+                            .transition(.move(edge: .leading))
                     }
-                    .transition(.move(edge: .trailing))
+                    if showPortfolio {
+                        ZStack(alignment: .top) {
+                            if vm.portfolioCoins.isEmpty && vm.searchText.isEmpty {
+                                portfolioEmptyText
+                            }else {
+                                portfolioCoinList
+                            }
+                        }
+                        .transition(.move(edge: .trailing))
+                    }
+                    Spacer(minLength: 0)
                 }
-                Spacer(minLength: 0)
+                .searchable(text: $vm.searchText,prompt: "Search for coins")
             }
             .sheet(isPresented: $showSettingsView) {
                 SettingsView()

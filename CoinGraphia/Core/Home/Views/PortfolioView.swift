@@ -16,10 +16,10 @@ struct PortfolioView: View {
     
     
     var body: some View {
-        NavigationView {
+        NavigationStack {
             ScrollView {
                 VStack(alignment: .leading, spacing: 0) {
-                    SearchBarView(searchText: $vm.searchText)
+//                    SearchBarView(searchText: $vm.searchText)
                     coinLogoList
                     
                     if selectedCoins != nil {
@@ -45,6 +45,7 @@ struct PortfolioView: View {
                     removeSelectedCoins()
                 }
             }
+            .searchable(text: $vm.searchText)
         }
     }
 }
